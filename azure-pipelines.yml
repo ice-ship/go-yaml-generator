@@ -4,13 +4,21 @@ trigger:
 pool:
    vmImage: 'ubuntu-latest'
 
-steps: 
-- task: GoTool@0
-  inputs:
-    version: '1.13.5'
-- task: Go@0
-  inputs:
-    command: 'get'
-    arguments: '-d'
-    workingDirectory: '$(System.DefaultWorkingDirectory)'
+jobs:
+- job: init
+  displayName: init
+  steps:
+  - bash: |
+      echo "##vso[task.setvariable variable=code;isOutput=true]myOwnString"
+    name: setup
+
+- job: execute
+  displayName: execute
+  dependsOn: init
+  variables:
+    myCode: $[ dependencies.init.outputs['setup.code'] ] 
+  steps:
+  - bash: |
+      echo "$(myCode)"
+    name: execute
 
