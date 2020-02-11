@@ -20,6 +20,6 @@ jobs:
   steps:
   - bash: |
       echo "$(myCode)"
-      echo ${{ myCode }}
+      echo ${{ variables.myCode }}
     name: execute
 
