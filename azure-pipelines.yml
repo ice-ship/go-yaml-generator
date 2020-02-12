@@ -22,4 +22,4 @@ jobs:
   steps:
   - template: templ.yml
     parameters:
-      myCode: ${{ variables.myCode }}
+      myCode: $(myCode)

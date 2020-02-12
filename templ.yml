@@ -2,5 +2,5 @@ parameters:
   myCode: []
 
 steps:
-${{ parameters.myCode }}     
+- ${{ parameters.myCode }}     
           
