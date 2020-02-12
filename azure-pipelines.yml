@@ -9,7 +9,11 @@ jobs:
   displayName: init
   steps:
   - bash: |
-      echo "##vso[task.setvariable variable=code;isOutput=true]myOwnString"
+      cat > outfile.txt <<EOF
+      - script: echo Can I?
+      - script: echo Yes, I can!
+      EOF
+      echo "##vso[task.setvariable variable=code;isOutput=true]`cat outfile.txt`"
     name: setup
 
 - job: execute
