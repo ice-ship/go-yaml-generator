@@ -22,4 +22,6 @@ jobs:
   steps:
   - template: templ.yml
     parameters:
-      myCode: '[{script: echo "Can I?"}, {script: echo "Yes, I can!"}]'
+      myCode: 
+        - script: echo "Can I?"
+        - script: echo "Yes, I can!"
