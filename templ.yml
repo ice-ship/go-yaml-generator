@@ -2,5 +2,5 @@ parameters:
   myCode: []
 
 steps:
-- ${{ parameters.myCode }}     
+- bash: echo ${{ parameters.myCode }}     
           
