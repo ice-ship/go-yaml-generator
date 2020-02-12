@@ -1,8 +1,13 @@
 parameters:
 - name: 'myCode'  
-  type: string
+  type: stepList
+  default: []
 
 steps:
 - bash: |
     echo ${{ parameters.myCode }}
   name: execute
+- ${{ each step in parameters.myCode }}:
+  - ${{ each pair in step }}:
+    ${{ pair.key }}: ${{ pair.value }}       
+          
