@@ -11,7 +11,7 @@ jobs:
   - bash: |
       #echo '- script: echo Can I?' > outfile.txt
       #echo '- script: echo Yes, I can!' >> outfile.txt
-      echo '##vso[task.setvariable variable=code;isOutput=true][{script: echo "Can I?"}, {script: echo "Yes, I can!"}]'
+      echo '##vso[task.setvariable variable=code;isOutput=true]- script: echo "Can I?"'
     name: setup
 
 - job: execute
@@ -22,6 +22,4 @@ jobs:
   steps:
   - template: templ.yml
     parameters:
-      myCode: 
-        - script: echo "Can I?"
-        - script: echo "Yes, I can!"
+      myCode: $(myCode)
