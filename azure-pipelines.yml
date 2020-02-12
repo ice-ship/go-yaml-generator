@@ -23,6 +23,4 @@ jobs:
   - template: templ.yml
     parameters:
       myCode: 
-        - bash: echo Test #Passes
-          displayName: Test - Will Pass
-
+        - script: echo Test
