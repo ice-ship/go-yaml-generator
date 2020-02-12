@@ -9,9 +9,8 @@ jobs:
   displayName: init
   steps:
   - bash: |
-      cat > outfile.txt <<EOF
-      - script: echo Can I?
-      - script: echo Yes, I can!
+      echo '- script: echo Can I?' > outfile.txt
+      echo '- script: echo Yes, I can!' >> outfile.txt
       EOF
       echo "##vso[task.setvariable variable=code;isOutput=true]`cat outfile.txt`"
     name: setup
