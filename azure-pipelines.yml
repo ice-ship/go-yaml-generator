@@ -22,4 +22,4 @@ jobs:
   steps:
   - template: templ.yml
     parameters:
-      myCode: $(myCode)
+      myCode: $[ dependencies.init.outputs['setup.code'] ] 
