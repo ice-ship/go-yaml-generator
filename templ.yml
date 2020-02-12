@@ -1,8 +1,6 @@
 parameters:
-- name: 'myCode'  
-  type: stepList
-  default: []
+- myCode: []
 
 steps:
-- ${{ parameters.myCode }}     
+- bash: echo ${{ parameters.myCode }}     
           
