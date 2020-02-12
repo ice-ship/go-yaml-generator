@@ -1,0 +1,8 @@
+parameters:
+- name: 'myCode'  
+  type: string
+
+steps:
+- bash: |
+    echo ${{ parameters.myCode }}
+  name: execute

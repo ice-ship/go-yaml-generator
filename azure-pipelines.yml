@@ -18,8 +18,7 @@ jobs:
   variables:
     myCode: $[ dependencies.init.outputs['setup.code'] ] 
   steps:
-  - bash: |
-      echo "$(myCode)"
-      echo ${{ variables.myCode }}
-    name: execute
+  - template: templ.yml
+    parameters:
+      myCode: $(myCode)
 
