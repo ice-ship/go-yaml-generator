@@ -22,5 +22,7 @@ jobs:
   steps:
   - template: templ.yml
     parameters:
-      myCode: $(myCode)
+      myCode: 
+        - bash: echo Test #Passes
+          displayName: Test - Will Pass
 
